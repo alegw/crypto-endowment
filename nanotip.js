@@ -2,6 +2,7 @@
 const charge = require('lightning-charge-client')(process.env.CHARGE_URL, process.env.CHARGE_TOKEN)
 
 // Express setup & settings
+var express = require('express')
 const app = require('express')()
 app.set('port', process.env.PORT || 9115)
 app.set('host', process.env.HOST || 'localhost')
@@ -28,7 +29,14 @@ app.use(require('morgan')('dev'))
 app.use(require('csurf')({ cookie: true }))
 
 // Frontend
-app.get('/', (req, res) => res.render(__dirname + '/nanotip.pug', { req }))
+app.use(express.static('.'))
+
+//app.get('/', (req, res) => res.render(__dirname + '/nanotip.pug', { req }))
+
+app.get('/', function(req, res) {
+  res.sendFile(__dirname + '/index.html');
+});
+
 app.get('/bootstrap.min.css', (req, res) => res.sendFile(cssPath))
 
 // Tip request

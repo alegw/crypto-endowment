@@ -1,0 +1,36 @@
+{
+  "name": "nanotip",
+  "version": "0.1.1",
+  "description": "Lightning Tip Box",
+  "bin": {
+    "nanotipd": "nanotipd",
+    "nanotip": "nanotipd"
+  },
+  "scripts": {
+    "start": "./nanotipd"
+  },
+  "repository": "https://github.com/ElementsProject/nanotip.git",
+  "keywords": [
+    "bitcoin",
+    "lightning",
+    "lightning-charge",
+    "tip",
+    "tipjar",
+    "donation",
+    "gratuity",
+    "nanotip"
+  ],
+  "author": "Nadav Ivgi",
+  "license": "MIT",
+  "dependencies": {
+    "body-parser": "^1.18.2",
+    "bootswatch": "^4.0.0",
+    "cookie-parser": "^1.4.3",
+    "csurf": "^1.9.0",
+    "express": "^4.16.3",
+    "lightning-charge-client": "^0.1.7",
+    "meow": "^4.0.0",
+    "morgan": "^1.9.0",
+    "pug": "^2.0.3"
+  }
+}
